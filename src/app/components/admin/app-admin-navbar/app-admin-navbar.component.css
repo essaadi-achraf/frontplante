@@ -1,0 +1,9 @@
+.nav-item-link {
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+.nav-item-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background on hover */
+  color: #00d1b2; /* Change text color on hover */
+}

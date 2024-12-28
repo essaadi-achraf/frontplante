@@ -1,0 +1,68 @@
+<div class="position-relative">
+<nav class="navbar rounded-3 bg-white position-sticky top-0 shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand text-success fw-bold">Medicinal Plants Catalog</a>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div class="mat-typography container">
+  <!-- Titre principal -->
+
+  <!-- Conteneur des plantes -->
+  <div class="row">
+    <div *ngFor="let plant of plants" class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <!-- Card pour chaque plante -->
+      <mat-card class="shadow-lg mt-4 position-relative overflow-hidden rounded-4 ">
+        <div class="position-relative">
+          <!-- Image de la plante -->
+          <img
+            mat-card-image
+            [src]="plant.image"
+            [alt]="plant.name"
+            class="w-100 rounded-top"
+            style="object-fit: cover; max-height: 200px;"
+          />
+
+          <!-- Région superposée -->
+          <div
+            class="position-absolute top-0 end-0 m-2 bg-white text-dark rounded-pill px-3 py-1 shadow-sm"
+            style="font-size: 12px; font-weight: 600;"
+          >
+            Region: {{ plant.region }}
+          </div>
+        </div>
+
+
+
+        <!-- Contenu du mat-card -->
+        <mat-card-content class="p-3">
+          <!-- Titre de la plante -->
+          <mat-card-title class="m-t-2 text-success">
+            <h5>{{ plant.name }}</h5>
+          </mat-card-title>
+
+          <!-- Description de la plante -->
+          <p class="text-muted mb-2">{{ plant.description }}</p>
+
+
+          <!-- Utilisations médicales -->
+          <div>
+            <h6>Used for:</h6>
+            <mat-chip-set>
+              <mat-chip
+                *ngFor="let disease of plant.diseases"
+                class="rounded-pill  opacity-75 bg-success text-white p-2"
+              >
+                {{ disease }}
+              </mat-chip>
+            </mat-chip-set>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+</div>

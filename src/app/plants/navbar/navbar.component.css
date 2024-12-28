@@ -1,0 +1,15 @@
+.nav-item a:hover {
+  background-color: rgba(25, 135, 84, 0.1);
+}
+.nav-link {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background-color: rgba(25, 135, 84, 0.1);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

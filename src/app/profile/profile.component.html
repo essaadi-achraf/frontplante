@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md">
+      <mat-card>
+        <div class="text-center p-3">
+          <img [src]="userProfile.avatar" class="rounded-circle mb-3" style="width: 150px; height: 150px;">
+          <h3>{{userProfile.name}}</h3>
+          <p class="text-muted">{{userProfile.bio}}</p>
+          <div class="d-flex justify-content-around text-center mt-3">
+            <div>
+              <h6>Articles</h6>
+              <span>{{userProfile.stats.articles}}</span>
+            </div>
+            <div>
+              <h6>Plants</h6>
+              <span>{{userProfile.stats.plants}}</span>
+            </div>
+            <div>
+              <h6>Comments</h6>
+              <span>{{userProfile.stats.comments}}</span>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

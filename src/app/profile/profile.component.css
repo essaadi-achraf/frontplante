@@ -1,0 +1,9 @@
+.mat-card {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}

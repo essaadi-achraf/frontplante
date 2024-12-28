@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Plants Management</h2>
+    <button class="btn btn-primary rounded-pill" (click)="showAddPlantModal = true">
+      <mat-icon>add</mat-icon> Add Plant
+    </button>
+  </div>
+
+  <div class="card rounded-4">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Region</th>
+            <th>Uses</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let plant of plants">
+            <td>{{plant.name}}</td>
+            <td>{{plant.region}}</td>
+            <td>{{plant.uses.join(', ')}}</td>
+            <td>
+              <button class="btn btn-sm btn-icon me-2 text-primary" (click)="editPlant(plant)">
+                <mat-icon >edit</mat-icon>
+              </button>
+              <button class="btn btn-sm btn-icon text-danger" (click)="deletePlant(plant)">
+                <mat-icon >delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
