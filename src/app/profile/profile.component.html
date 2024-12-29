@@ -1,4 +1,10 @@
 <div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2></h2>
+    <button class="btn btn-success rounded-pill " (click)="openDiseaseDialog()">
+      <mat-icon class="" >add</mat-icon> Add disease
+    </button>
+  </div>
   <div class="row">
     <div class="col-md">
       <mat-card>
@@ -16,8 +22,8 @@
               <span>{{userProfile.stats.plants}}</span>
             </div>
             <div>
-              <h6>Comments</h6>
-              <span>{{userProfile.stats.comments}}</span>
+              <h6>Diseases</h6>
+              <span>{{userProfile.stats.disease}}</span>
             </div>
           </div>
         </div>

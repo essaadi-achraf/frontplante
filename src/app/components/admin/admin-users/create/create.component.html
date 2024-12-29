@@ -1,0 +1,56 @@
+
+<mat-dialog-content >
+  <h2 mat-dialog-title class="text-center">Add New User</h2>
+  <form [formGroup]="userForm" class="user-form">
+    <div class="d-flex ">
+    <mat-form-field class="w-100 px-2 ">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Enter name">
+      <mat-error *ngIf="userForm.get('name')?.errors?.['required']">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-100 px-2">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Enter email">
+      <mat-error *ngIf="userForm.get('email')?.errors?.['required']">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="userForm.get('email')?.errors?.['email']">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+    </div>
+    <div class="d-flex">
+    <mat-form-field class="w-100 px-2">
+      <mat-label>Role</mat-label>
+      <mat-select formControlName="role">
+        <mat-option value="User">User</mat-option>
+        <mat-option value="Admin">Admin</mat-option>
+      </mat-select>
+      <mat-error *ngIf="userForm.get('role')?.errors?.['required']">
+        Role is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-100 px-2">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="Active">Active</mat-option>
+        <mat-option value="Inactive">Inactive</mat-option>
+      </mat-select>
+      <mat-error *ngIf="userForm.get('status')?.errors?.['required']">
+        Status is required
+      </mat-error>
+    </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" >
+  <button  class="btn btn-danger rounded-pill " style="margin-right: 8px;" (click)="onCancel()">Cancel</button>
+  <button class="btn btn-primary rounded-pill" (click)="onSubmit()" [disabled]="!userForm.valid">
+    Add User
+  </button>
+</mat-dialog-actions>

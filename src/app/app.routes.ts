@@ -11,6 +11,8 @@ import {AdminUsersComponent} from './components/admin/admin-users/admin-users.co
 import {AdminPlantsComponent} from './components/admin/admin-plants/admin-plants.component';
 import {AdminArticlesComponent} from './components/admin/admin-articles/admin-articles.component';
 import {AdminProfileComponent} from './components/admin/admin-profile/admin-profile.component';
+import {AdminDiseasesComponent} from './components/admin/admin-diseases/admin-diseases.component';
+import {CreateArticleComponent} from './create-article/create-article.component';
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
@@ -25,6 +27,7 @@ export const appRoutes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'articles', component: PlantsArticlesComponent },
       { path: 'plants', component: PlantsListComponent },
+      {path:'createarticle', component: CreateArticleComponent },
     ]
   },
 
@@ -38,7 +41,7 @@ export const appRoutes: Routes = [
       { path: 'plants', component: AdminPlantsComponent },
       { path: 'articles', component: AdminArticlesComponent },
       { path: 'profile', component: AdminProfileComponent },
-      //{ path: 'diseases', component: AdminDiseaseManagementComponent }
+      { path: 'diseases', component: AdminDiseasesComponent }
     ]
   },
 

@@ -18,6 +18,7 @@ export class AdminNavbarComponent {
     { icon: 'people', label: 'Users', action: () => this.router.navigate(['/admin/users']) },
     { icon: 'local_florist', label: 'Plants', action: () => this.router.navigate(['/admin/plants']) },
     { icon: 'article', label: 'Articles', action: () => this.router.navigate(['/admin/articles']) },
+    { icon: 'health_and_safety', label: 'Diseases', action: () => this.router.navigate(['/admin/diseases']) },
     { icon: 'person', label: 'Profile', action: () => this.router.navigate(['/admin/profile']) },
     { icon: 'logout', label: 'Logout', action: () => this.router.navigate(['/auth/login']) }
   ];
