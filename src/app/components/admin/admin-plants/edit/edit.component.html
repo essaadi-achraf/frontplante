@@ -1,0 +1,53 @@
+<mat-dialog-content>
+  <h2 mat-dialog-title class="text-center mb-4">Edit Plant</h2>
+  <form [formGroup]="plantForm" class="user-form">
+    <div class="d-flex">
+      <mat-form-field class="w-100 px-2">
+        <mat-label>Plant Name</mat-label>
+        <input matInput formControlName="name" placeholder="Enter plant name" />
+        <mat-error *ngIf="plantForm.get('name')?.errors?.['required']">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100 px-2">
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description" placeholder="Enter description" />
+        <mat-error *ngIf="plantForm.get('description')?.errors?.['required']">
+          Description is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="d-flex">
+      <mat-form-field class="w-100 px-2">
+        <mat-label>Region</mat-label>
+        <input matInput formControlName="region" placeholder="Enter region" />
+        <mat-error *ngIf="plantForm.get('region')?.errors?.['required']">
+          Region is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="d-flex">
+      <mat-form-field class="w-100 px-2">
+        <mat-label>Diseases</mat-label>
+        <mat-select formControlName="diseases" multiple placeholder="Select related diseases">
+          <mat-option *ngFor="let disease of diseasesList" [value]="disease">
+            {{ disease }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="plantForm.get('diseases')?.errors?.['required']">
+          Diseases are required
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button class="btn btn-danger rounded-pill" (click)="onCancel()">Cancel</button>
+  <button mat-button class="btn btn-primary rounded-pill" (click)="onSubmit()" [disabled]="!plantForm.valid">
+    Update Plant
+  </button>
+</mat-dialog-actions>

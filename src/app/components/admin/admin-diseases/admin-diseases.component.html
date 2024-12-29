@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2>Plants Management</h2>
+    <h2>Diseases Management</h2>
     <button class="btn btn-primary rounded-pill" (click)="openCreateDialog()">
-      <mat-icon>add</mat-icon> Add Plant
+      <mat-icon>add</mat-icon> Add Disease
     </button>
   </div>
 
@@ -13,21 +13,14 @@
           <thead>
           <tr>
             <th>Name</th>
-            <th>Region</th>
-            <th>Diseases</th>
             <th>Actions</th>
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let plant of plants">
-            <td>{{ plant.name }}</td>
-            <td>{{ plant.region }}</td>
-            <td>{{ plant.diseases.join(', ') }}</td>
+          <tr *ngFor="let disease of diseases">
+            <td>{{ disease.name }}</td>
             <td>
-              <button class="btn btn-sm btn-icon text-primary" (click)="editPlant(plant)">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button class="btn btn-sm btn-icon text-danger" (click)="deletePlant(plant)">
+              <button class="btn btn-sm btn-icon text-danger" (click)="deleteDisease(disease)">
                 <mat-icon>delete</mat-icon>
               </button>
             </td>

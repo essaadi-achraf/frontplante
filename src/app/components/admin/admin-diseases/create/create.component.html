@@ -1,0 +1,19 @@
+
+<!-- Disease Modal -->
+<mat-dialog-content>
+  <h2 mat-dialog-title class="text-center">Add Disease</h2>
+  <form [formGroup]="diseaseForm">
+    <mat-form-field class="w-100 mb-3">
+      <mat-label>Disease Name</mat-label>
+      <input matInput formControlName="name" required placeholder="Enter disease name">
+      <mat-error *ngIf="diseaseForm.get('name')?.hasError('required')">
+        Disease name is required
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button class="btn btn-danger rounded-pill" style="margin-right: 8px;" (click)="onCancel()">Cancel</button>
+  <button mat-button class="btn btn-primary rounded-pill" (click)="onSubmit()" [disabled]="!diseaseForm.valid">Add Disease</button>
+</mat-dialog-actions>

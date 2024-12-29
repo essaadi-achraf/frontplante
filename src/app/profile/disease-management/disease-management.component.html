@@ -1,0 +1,31 @@
+<div class="containe p-2 ">
+<mat-form-field class="disease-chip-list w-100">
+  <mat-label>Diseases</mat-label>
+  <mat-chip-grid #chipGrid aria-label="Enter diseases">
+    @for (disease of diseases(); track disease) {
+      <mat-chip-row
+        (removed)="remove(disease)"
+        [editable]="true"
+        (edited)="edit(disease, $event)"
+        [aria-description]="'press enter to edit ' + disease.name"
+      >
+        {{disease.name}}
+        <button matChipRemove [attr.aria-label]="'remove ' + disease.name">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+    }
+    <input
+      placeholder="New disease..."
+      [matChipInputFor]="chipGrid"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      [matChipInputAddOnBlur]="addOnBlur"
+      (matChipInputTokenEnd)="add($event)"
+    />
+  </mat-chip-grid>
+
+</mat-form-field>
+  <button class="btn btn-success rounded-pill float-end" >
+    Save
+  </button>
+</div>

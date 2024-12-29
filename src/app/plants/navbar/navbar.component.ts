@@ -23,7 +23,8 @@ export class NavbarComponent implements OnInit {
     { icon: 'home', label: 'Home', action: () => this.home() },
     { icon: 'local_florist', label: 'Plants', action: () => this.plants() },
     { icon: 'account_circle', label: 'Profile', action: () => this.profile() },
-    { icon: 'logout', label: 'Logout', action: () => this.logout() }
+    { icon: 'library_add', label: 'New Article', action: () => this.createArticle() },
+    { icon: 'logout', label: 'Logout', action: () => this.logout() },
   ];
 
   logout() {
@@ -40,5 +41,8 @@ export class NavbarComponent implements OnInit {
 
   profile() {
     this.router.navigate(['profile']);
+  }
+  createArticle() {
+    this.router.navigate(['createarticle']);
   }
 }

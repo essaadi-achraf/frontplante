@@ -4,6 +4,10 @@ export interface Plant {
   description: string;
   image: string;
   region: string;
-  diseases: string[];
+  diseases: Diseases[];
   uses: string[];
+}
+export interface Diseases {
+  id: number;
+  name: string;
 }
